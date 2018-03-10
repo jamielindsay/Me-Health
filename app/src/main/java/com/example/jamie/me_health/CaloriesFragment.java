@@ -16,7 +16,7 @@ public class CaloriesFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         // Defines the xml file for the fragment
-        return inflater.inflate(R.layout.fragment_notification, parent, false);
+        return inflater.inflate(R.layout.fragment_calories, parent, false);
     }
 
     // This event is triggered soon after onCreateView().
