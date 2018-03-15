@@ -1,48 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
-
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/buttonCalorie"
+        <TextView
+            android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_weight="1"
-            android:text="Calorie Tracker"
-            android:textColor="#ffffff"
-            android:background="#388E3C"
+            android:text="Enter your exercise and start timer"
             />
 
-        <Button
-            android:id="@+id/buttonExercise"
+        <Spinner
+            android:id="@+id/spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_weight="1"
-            android:text="Exercise Tracker"
-            android:textColor="#ffffff"
-            android:background="#26C6DA"
             />
 
         <Button
-            android:id="@+id/buttonGoals"
+            android:id="@+id/button3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_weight="1"
-            android:text="Weight loss Goals"
-            android:textColor="#ffffff"
-            android:background="#FDD835"
-            />
+            android:text="Button" />
+
     </LinearLayout>
-
 </LinearLayout>

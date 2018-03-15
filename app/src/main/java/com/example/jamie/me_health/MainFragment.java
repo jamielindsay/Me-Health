@@ -31,11 +31,22 @@ public class MainFragment extends Fragment {
         // Setup any handles to view objects here
         // EditText etFoo = (EditText) view.findViewById(R.id.etFoo);
 
-        Button button = (Button) view.findViewById(R.id.buttonCalorie);
-        button.setOnClickListener(new View.OnClickListener() {
+        Button button1 = (Button) view.findViewById(R.id.buttonCalorie);
+        button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 currentFragment = new CaloriesFragment();
+                ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.content, currentFragment);
+                ft.commit();
+            }
+        });
+
+        Button button2 = (Button) view.findViewById(R.id.buttonExercise);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                currentFragment = new ExerciseFragment();
                 ft = getFragmentManager().beginTransaction();
                 ft.replace(R.id.content, currentFragment);
                 ft.commit();
