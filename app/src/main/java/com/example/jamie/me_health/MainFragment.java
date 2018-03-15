@@ -52,5 +52,16 @@ public class MainFragment extends Fragment {
                 ft.commit();
             }
         });
+
+        Button button3 = (Button) view.findViewById(R.id.buttonGoals);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                currentFragment = new GoalsFragment();
+                ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.content, currentFragment);
+                ft.commit();
+            }
+        });
     }
 }
