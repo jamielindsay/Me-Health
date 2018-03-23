@@ -6,7 +6,14 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStreamReader;
 
 /**
  * Created by Jamie on 08/03/2018.
@@ -24,8 +31,45 @@ public class DashboardFragment extends Fragment {
     // This event is triggered soon after onCreateView().
     // Any view setup should occur here.  E.g., view lookups and attaching view listeners.
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
+    public void onViewCreated(final View view, Bundle savedInstanceState) {
         // Setup any handles to view objects here
         // EditText etFoo = (EditText) view.findViewById(R.id.etFoo);
+
+        Button button1 = (Button) view.findViewById(R.id.testStorageButton);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    TextView testCalories = (TextView) view.findViewById(R.id.testCaloriesView);
+                    TextView testExercise = (TextView) view.findViewById(R.id.testExerciseView);
+
+                    FileInputStream fis1 = getActivity().openFileInput("calories");
+                    FileInputStream fis2 = getActivity().openFileInput("exercise");
+
+                    InputStreamReader isr1 = new InputStreamReader(fis1);
+                    InputStreamReader isr2 = new InputStreamReader(fis2);
+
+                    BufferedReader bufferedReader1 = new BufferedReader(isr1);
+                    BufferedReader bufferedReader2 = new BufferedReader(isr2);
+
+                    StringBuilder sb1 = new StringBuilder();
+                    StringBuilder sb2 = new StringBuilder();
+                    String line;
+
+                    while ((line = bufferedReader1.readLine()) != null) {
+                        sb1.append(line);
+                    }
+                    testCalories.setText(sb1.toString());
+
+                    while ((line = bufferedReader2.readLine()) != null) {
+                        sb2.append(line);
+                    }
+                    testExercise.setText(sb2.toString());
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 }

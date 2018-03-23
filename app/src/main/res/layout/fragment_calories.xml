@@ -18,7 +18,7 @@
             android:text="Enter your meal and its amount of calories" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/mealInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -28,7 +28,7 @@
             android:text="Meal" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/caloriesInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -37,7 +37,7 @@
             android:inputType="number" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/enterCalories"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"

@@ -18,19 +18,35 @@
             />
 
         <Spinner
-            android:id="@+id/spinner"
+            android:id="@+id/exerciseInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_weight="1"
             />
 
-        <Button
-            android:id="@+id/button3"
+        <TextView
+            android:id="@+id/timer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="0s"
+            android:gravity="center"
+            />
+
+        <Button
+            android:id="@+id/buttonTimer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Start Timer" />
+
+        <Button
+            android:id="@+id/saveExercise"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Save" />
 
     </LinearLayout>
 </LinearLayout>
