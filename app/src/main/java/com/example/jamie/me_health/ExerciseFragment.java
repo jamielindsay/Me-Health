@@ -1,11 +1,14 @@
 package com.example.jamie.me_health;
 
 import android.content.Context;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,6 +22,32 @@ import java.io.FileOutputStream;
  */
 
 public class ExerciseFragment extends Fragment {
+    boolean timerStarted = false;
+
+    TextView timerTextView;
+    long startTime = 0;
+
+    Handler timerHandler = new Handler();
+    Runnable timerRunnable = new Runnable() {
+
+        @Override
+        public void run() {
+            long millis = System.currentTimeMillis() - startTime;
+            int milliseconds = (int) (millis / 10);
+            int seconds = (int) (millis / 1000);
+            int minutes = seconds / 60;
+            int hours = minutes / 60;
+            milliseconds = milliseconds % 100;
+            seconds = seconds % 60;
+            minutes = minutes % 60;
+
+            timerTextView.setText(String.format("%02d:%02d:%02d:%02d", hours, minutes, seconds, milliseconds));
+
+            timerHandler.postDelayed(this, 10);
+        }
+    };
+
+
     // The onCreateView method is called when Fragment should create its View object hierarchy,
     // either dynamically or via XML layout inflation.
     @Override
@@ -58,6 +87,26 @@ public class ExerciseFragment extends Fragment {
                     outputStream.close();
                 } catch (Exception e) {
                     e.printStackTrace();
+                }
+            }
+        });
+
+        timerTextView = (TextView) view.findViewById(R.id.timer);
+        final Button button2 = (Button) view.findViewById(R.id.buttonTimer);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (timerStarted) {
+                    button2.setText("Start Timer");
+                    timerStarted = false;
+                    timerHandler.removeCallbacks(timerRunnable);
+                    getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+                } else {
+                    button2.setText("Stop Timer");
+                    timerStarted = true;
+                    startTime = System.currentTimeMillis();
+                    timerRunnable.run();
+                    getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
                 }
             }
         });

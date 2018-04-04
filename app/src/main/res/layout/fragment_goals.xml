@@ -18,30 +18,32 @@
             />
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/weightInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number"
             android:gravity="center"
             android:layout_weight="1"
+            android:hint="Current Weight"
             />
 
         <EditText
-            android:id="@+id/editText4"
+            android:id="@+id/goalInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number"
             android:gravity="center"
             android:layout_weight="1"
+            android:hint="Target Weight"
             />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/saveGoal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button"
+            android:text="Save"
             android:gravity="center"
             android:layout_weight="1"
             />

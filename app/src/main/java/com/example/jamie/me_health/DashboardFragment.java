@@ -42,18 +42,23 @@ public class DashboardFragment extends Fragment {
                 try {
                     TextView testCalories = (TextView) view.findViewById(R.id.testCaloriesView);
                     TextView testExercise = (TextView) view.findViewById(R.id.testExerciseView);
+                    TextView testGoals = (TextView) view.findViewById(R.id.testGoalsView);
 
                     FileInputStream fis1 = getActivity().openFileInput("calories");
                     FileInputStream fis2 = getActivity().openFileInput("exercise");
+                    FileInputStream fis3 = getActivity().openFileInput("goals");
 
                     InputStreamReader isr1 = new InputStreamReader(fis1);
                     InputStreamReader isr2 = new InputStreamReader(fis2);
+                    InputStreamReader isr3 = new InputStreamReader(fis3);
 
                     BufferedReader bufferedReader1 = new BufferedReader(isr1);
                     BufferedReader bufferedReader2 = new BufferedReader(isr2);
+                    BufferedReader bufferedReader3 = new BufferedReader(isr3);
 
                     StringBuilder sb1 = new StringBuilder();
                     StringBuilder sb2 = new StringBuilder();
+                    StringBuilder sb3 = new StringBuilder();
                     String line;
 
                     while ((line = bufferedReader1.readLine()) != null) {
@@ -65,6 +70,11 @@ public class DashboardFragment extends Fragment {
                         sb2.append(line);
                     }
                     testExercise.setText(sb2.toString());
+
+                    while ((line = bufferedReader3.readLine()) != null) {
+                        sb3.append(line);
+                    }
+                    testGoals.setText(sb3.toString());
                 }
                 catch (Exception e) {
                     e.printStackTrace();
