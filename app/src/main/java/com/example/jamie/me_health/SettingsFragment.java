@@ -1,34 +1,29 @@
 package com.example.jamie.me_health;
 
 import android.content.Context;
-import android.os.Environment;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
 
 /**
- * Created by Jamie on 10/03/2018.
+ * Created by Jamie on 09/03/2018.
  */
 
-public class CaloriesFragment extends Fragment{
+public class SettingsFragment extends Fragment {
     // The onCreateView method is called when Fragment should create its View object hierarchy,
     // either dynamically or via XML layout inflation.
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         // Defines the xml file for the fragment
-        return inflater.inflate(R.layout.fragment_calories, parent, false);
+        return inflater.inflate(R.layout.fragment_settings, parent, false);
     }
 
     // This event is triggered soon after onCreateView().
@@ -37,20 +32,27 @@ public class CaloriesFragment extends Fragment{
     public void onViewCreated(View view, Bundle savedInstanceState) {
         // Setup any handles to view objects here
         // EditText etFoo = (EditText) view.findViewById(R.id.etFoo);
-
-        Button button1 = (Button) view.findViewById(R.id.enterCalories);
+        Button button1 = (Button) view.findViewById(R.id.deleteAllData);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String filename = "calories";
-                EditText mEdit1 = (EditText) getActivity().findViewById(R.id.mealInput);
-                EditText mEdit2 = (EditText) getActivity().findViewById(R.id.caloriesInput);
-                String fileContents = mEdit1.getText().toString() + "," + mEdit2.getText().toString() + ",";
+                String filename1 = "calories";
+                String filename2 = "exercise";
+                String filename3 = "goals";
 
+                String fileContents = "";
                 FileOutputStream outputStream;
 
                 try {
-                    outputStream = getActivity().openFileOutput(filename, Context.MODE_APPEND);
+                    outputStream = getActivity().openFileOutput(filename1, Context.MODE_PRIVATE);
+                    outputStream.write(fileContents.getBytes());
+                    outputStream.close();
+
+                    outputStream = getActivity().openFileOutput(filename2, Context.MODE_PRIVATE);
+                    outputStream.write(fileContents.getBytes());
+                    outputStream.close();
+
+                    outputStream = getActivity().openFileOutput(filename3, Context.MODE_PRIVATE);
                     outputStream.write(fileContents.getBytes());
                     outputStream.close();
                 } catch (Exception e) {

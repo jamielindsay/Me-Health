@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_weight="1"
-            android:text="Calorie Tracker"
+            android:text="@string/calorie_title"
             android:textColor="#ffffff"
             android:background="#388E3C"
             />
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_weight="1"
-            android:text="Exercise Tracker"
+            android:text="@string/exercise_title"
             android:textColor="#ffffff"
             android:background="#26C6DA"
             />
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_weight="1"
-            android:text="Weight loss Goals"
+            android:text="@string/goal_title"
             android:textColor="#ffffff"
             android:background="#FDD835"
             />

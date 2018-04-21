@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Enter your meal and its amount of calories" />
+            android:text="@string/calorie_desc" />
 
         <EditText
             android:id="@+id/mealInput"
@@ -25,7 +25,7 @@
             android:ems="10"
             android:gravity="center"
             android:inputType="textPersonName"
-            android:hint="Meal" />
+            android:hint="@string/meal_hint" />
 
         <EditText
             android:id="@+id/caloriesInput"
@@ -35,7 +35,7 @@
             android:ems="10"
             android:gravity="center"
             android:inputType="number"
-            android:hint="Calories"
+            android:hint="@string/calories_hint"
             />
 
         <Button
@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Enter" />
+            android:text="@string/save_button" />
     </LinearLayout>
 
 </LinearLayout>

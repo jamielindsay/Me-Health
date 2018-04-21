@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_home">追踪</string>
+    <string name="title_dashboard">进步</string>
+    <string name="title_settings">设置</string>
+    <string name="calorie_title">卡路里计算</string>
+    <string name="exercise_title">运动量追踪</string>
+    <string name="goal_title">减重目标</string>
+    <string name="exercise_desc">输入您的运动种类并开始计时</string>
+    <string name="timer_button">开始计时</string>
+    <string name="save_button">保存</string>
+    <string name="calorie_desc">输入您食用的食物和卡路里数量</string>
+    <string name="meal_hint">食物</string>
+    <string name="calories_hint">卡路里（千卡）</string>
+    <string name="goals_desc">输入现在体重和目标体重</string>
+    <string name="current_hint">现在的体重（公斤）</string>
+    <string name="goal_hint">目标体重（公斤）</string>
+    <string name="calories_gained">卡路里增加量：</string>
+    <string name="calories_lost">卡路里消耗：</string>
+    <string name="weight_lost">体重减少：</string>
+    <string name="to_target">与目标体重相差</string>
+    <string name="delete_all_button">删除所有数据</string>
+    <string name="kg">公斤</string>
+    <string name="kcal">千卡</string>
+</resources>

@@ -77,12 +77,12 @@ public class ExerciseFragment extends Fragment {
                 String filename = "exercise";
                 Spinner eSpinner = (Spinner) getActivity().findViewById(R.id.exerciseInput);
                 TextView eTextView = (TextView) getActivity().findViewById(R.id.timer);
-                String fileContents = eSpinner.getSelectedItem() + "," + eTextView.getText();
+                String fileContents = eSpinner.getSelectedItem() + "," + eTextView.getText() + ",";
 
                 FileOutputStream outputStream;
 
                 try {
-                    outputStream = getActivity().openFileOutput(filename, Context.MODE_PRIVATE);
+                    outputStream = getActivity().openFileOutput(filename, Context.MODE_APPEND);
                     outputStream.write(fileContents.getBytes());
                     outputStream.close();
                 } catch (Exception e) {
