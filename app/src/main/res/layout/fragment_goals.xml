@@ -36,7 +36,7 @@
             android:inputType="number"
             android:gravity="center"
             android:layout_weight="1"
-            android:hint="@string/goal_title"
+            android:hint="@string/goal_hint"
             />
 
         <Button

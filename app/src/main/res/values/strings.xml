@@ -20,7 +20,8 @@
     <string name="calories_gained">Calories gained:</string>
     <string name="calories_lost">Calories lost:</string>
     <string name="weight_lost">Weight lost:</string>
-    <string name="to_target">Weight loss needed to reach</string>
+    <string name="to_target">Weight loss needed to reach\u0020</string>
+    <string name="to_target_append">kg:</string>
     <string name="delete_all_button">Delete All Data</string>
     <string name="kg">kg</string>
     <string name="kcal">kcal</string>

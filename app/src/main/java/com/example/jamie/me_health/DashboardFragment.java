@@ -115,7 +115,7 @@ public class DashboardFragment extends Fragment {
             calLost.setText(caloriesBurnt + " " + getResources().getString(R.string.kcal));
             weightLost.setText(String.format(java.util.Locale.US, "%.2f", weightLoss) + " " + getResources().getString(R.string.kg));
             weightTargetV.setText(String.format(java.util.Locale.US, "%.2f", weightLossNeeded) + " " + getResources().getString(R.string.kg));
-            weightTargetL.setText(getResources().getString(R.string.to_target) + String.format(java.util.Locale.US, "%.2f", goalWeight) + " " + getResources().getString(R.string.kg)+ ":");
+            weightTargetL.setText(getResources().getString(R.string.to_target) + String.format(java.util.Locale.US, "%.2f", goalWeight) + getResources().getString(R.string.to_target_append));
         }
         catch (Exception e) {
             e.printStackTrace();
